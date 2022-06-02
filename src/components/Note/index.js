@@ -1,9 +1,14 @@
 import React from 'react'
 
-const Note = () => {
+// Componente de anotações
+
+const Note = ({ id, text, date }) => {
   return (
     <div>
-
+      <span>{text}</span>
+      <div className="note-footer">
+        <small>{date}</small>
+      </div>
     </div>
   )
 }
