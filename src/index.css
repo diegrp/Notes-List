@@ -75,3 +75,40 @@ html, body{
   align-items: center;
   justify-content: space-between;
 }
+
+/* Fomulário para adicionar um novo note */
+
+.note.new{
+  background-color: var(--background-note-new);
+}
+
+.note textarea{
+  font-size: var(--size-default);
+  border: none;
+  resize: none;
+  background-color: var(--background-note-new);
+}
+
+.note textarea:focus{
+  outline: none;
+}
+
+/* Botão para salvar nossa anotação e alternar darkmode */
+
+.save{
+  padding: 0.5rem 1.3rem;
+  border: none;
+  border-radius: var(--size-default);
+  cursor: pointer;
+  background-color: var(--background-btn);
+  transition: 0.2s linear;
+}
+
+.save.light:hover{
+  background-color: black;
+  color: white;
+}
+
+.save:hover{
+  background-color: var(--background-btn-hover);
+}
