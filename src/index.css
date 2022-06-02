@@ -116,3 +116,23 @@ html, body{
 .save:hover{
   background-color: var(--background-btn-hover);
 }
+
+/* Search notes */
+
+.search{
+  display: flex;
+  align-items: center;
+  background-color: var(--background-default);
+  padding: 0.5rem;
+  border-radius: var(--size-default);
+  margin-bottom: 1.2rem;
+}
+
+.search input{
+  background-color: var(--background-default);
+  border: none;
+}
+
+.search input:focus{
+  outline: none;
+}
