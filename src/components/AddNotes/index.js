@@ -1,13 +1,14 @@
 import React from 'react'
 
-const AddNotes = () => {
+// Componete para adicionar novas anotações
+
+const AddNotes = ({ handleAddNotes }) => {
+
   return (
     <div className="note new">
       <textarea
         cols="8"
         rows="10"
-        value={}
-        onChange={}
         placeholder="Digite uma nova anotação..."
       >
       </textarea>

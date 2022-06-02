@@ -1,9 +1,10 @@
 import React from 'react'
 import Note from '../Note'
+import AddNotes from '../AddNotes'
 
 // Componente de container de anotações
 
-const NotesList = ({ notes }) => {
+const NotesList = ({ notes,  handleAddNotes, handleDeleteNotes }) => {
   return (
     <div className="notes-list">
       {/* mapeamento de anotações, vinda do nosso estado de notes*/}
@@ -18,6 +19,8 @@ const NotesList = ({ notes }) => {
           />
         )
       })}
+      {/* compoente para adicionar uma nova anotação */}
+      <AddNotes handleAddNotes={handleAddNotes}/>
     </div>
   )
 }

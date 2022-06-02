@@ -29,6 +29,30 @@ const App = () => {
       date: "31/03/2022"
     }
   ]);
+
+  // Função para adicionar uma nova anotação
+
+  /* recebe o text do nosso addNotes e adicionada em notes */
+
+  const addNote = (text) => {
+    const date = new Date();
+    const newNote = {
+      id: nanoid(),
+      text: text,
+      date: date.toLocaleDateString()
+    }
+    const newNotes = [ ...notes, newNote ];
+    setNotes(newNotes);
+  }
+
+  // Função para deletar anotações
+
+  /* recebe o id e filtra somente notes que sejam diferentes ao id */
+  
+  const deleteNote = (id) => {
+    const newNotes = notes.filter((note) => note.id !== id);
+    setNotes(newNotes);
+  }
   
   // Render da página inicial do App, junto com os componentes necessários
 
@@ -40,6 +64,8 @@ const App = () => {
           /* procura dentro do nosso state notes, text com letra minúscula e que esteja dentro do nosso outro estado,
           caso não tiver nada, mostre todas as anotações */
           notes={notes}
+          handleAddNotes={addNote}
+          handleDeleteNotes={deleteNote}
         />
       </div>
     </main>

@@ -76,6 +76,10 @@ html, body{
   justify-content: space-between;
 }
 
+.delete-icon{
+  cursor: pointer;
+}
+
 /* Fomulário para adicionar um novo note */
 
 .note.new{
