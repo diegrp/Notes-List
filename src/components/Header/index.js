@@ -1,9 +1,11 @@
 import React from 'react'
 
+// Componente Header com toggle mode
+
 const Header = () => {
   return (
-    <div>
-
+    <div className="header">
+      <h1>Todo List</h1>
     </div>
   )
 }
