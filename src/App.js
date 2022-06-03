@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import NotesList from './Components/NotesList'
 import SearchNotes from './Components/SearchNotes'
+import Header from './Components/Header'
 import { nanoid } from 'nanoid'
 
 
@@ -64,6 +65,11 @@ const App = () => {
   return (
     <main>
       <div className="container">
+        {/* recebe um estado para alternância de modo, através de props que será utilizada em seu respectivo componente */}
+        <Header
+          handleToggleDarkMode={setDarkMode}
+          stateDarkMode={darkMode}
+        />
         {/* recebe um estado para armazenar texto de procura, através de props que será utilizada em seu respectivo componente */}
         <SearchNotes  
           handleSearchNotes={setSearchText}
