@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import NotesList from './Components/NotesList'
-import SearchNotes from './Components/SearchNotes'
-import Header from './Components/Header'
+import NotesList from './components/NotesList'
+import SearchNotes from './components/SearchNotes'
+import Header from './components/Header'
 import { nanoid } from 'nanoid'
-
 
 const App = () => {
 
