@@ -8,7 +8,8 @@ import { nanoid } from 'nanoid'
 const App = () => {
 
   // useStates espalhado em props para suas respectivas páginas
-
+  
+  const [ darkMode, setDarkMode ] = useState(false);
   const [ searchText, setSearchText ] = useState(''); 
 
   // Objeto de dados que cotém anotações para serem procuradas, criadas e deletadas
@@ -63,7 +64,7 @@ const App = () => {
   // Render da página inicial do App, junto com os componentes necessários
 
   return (
-    <main>
+    <main className={`${darkMode && "dark-mode"}`}>
       <div className="container">
         {/* recebe um estado para alternância de modo, através de props que será utilizada em seu respectivo componente */}
         <Header
