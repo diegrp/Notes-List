@@ -72,7 +72,7 @@ const App = () => {
         <NotesList 
           /* procura dentro do nosso state notes, text com letra minúscula e que esteja dentro do nosso outro estado,
           caso não tiver nada, mostre todas as anotações */
-          notes={notes}
+          notes={notes.filter((note) => note.text.toLocaleLowerCase().includes(searchText))}
           handleAddNotes={addNote}
           handleDeleteNotes={deleteNote}
         />
