@@ -136,3 +136,22 @@ html, body{
 .search input:focus{
   outline: none;
 }
+
+/* Header e darkmode */
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--size-default);
+}
+
+.dark-mode{
+  background-color: black;
+  transition: var(--transition);
+}
+
+.dark-mode h1{
+  color: white;
+  transition: var(--transition);
+}
