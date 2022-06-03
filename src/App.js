@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import NotesList from './Components/NotesList'
 import SearchNotes from './Components/SearchNotes'
 import Header from './Components/Header'
@@ -60,6 +60,27 @@ const App = () => {
     const newNotes = notes.filter((note) => note.id !== id);
     setNotes(newNotes);
   }
+
+  // Salvar qualquer alteração em nosso objeto de anotações, usando useEffect.
+
+  useEffect(() => {
+    /* conversão dos dados armazenados em localstorage para objeto e setar toda vez em notes, quando tiver esses dados */
+    const savedNotes = JSON.parse(window.localStorage.getItem(
+      'react-notes-app-data'
+    ));
+    if(savedNotes){
+      setNotes(savedNotes);
+    }
+  },[])
+
+  useEffect(() => {
+    /* salva no localstorage o objeto de dados que contém nossas anotações, convertido em JSON toda vez que sofre alguma
+    alteração */
+    window.localStorage.setItem(
+      'react-notes-app-data',
+      JSON.stringify(notes)
+    )
+  },[notes]);
   
   // Render da página inicial do App, junto com os componentes necessários
 
