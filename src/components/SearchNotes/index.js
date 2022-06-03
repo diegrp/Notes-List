@@ -1,7 +1,9 @@
 import React from 'react'
 import { MdSearch } from 'react-icons/md'
 
-const SearchNotes = () => {
+// Componente de pesquisa de anotações
+
+const SearchNotes = ({ handleSearchNotes }) => {
   return (
     <div className="search">
       {/* ícone de busca */}
@@ -9,6 +11,7 @@ const SearchNotes = () => {
       <input 
         type="text" 
         placeholder="Faça a sua pesquisa..." 
+        onChange={({target}) => handleSearchNotes(target.value)}
       />
     </div>
   )

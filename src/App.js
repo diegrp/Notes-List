@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
-import { nanoid } from 'nanoid'
 import NotesList from './Components/NotesList'
+import SearchNotes from './Components/SearchNotes'
+import { nanoid } from 'nanoid'
 
 
 const App = () => {
+
+  // useStates espalhado em props para suas respectivas páginas
+
+  const [ searchText, setSearchText ] = useState(''); 
 
   // Objeto de dados que cotém anotações para serem procuradas, criadas e deletadas
   
@@ -48,7 +53,7 @@ const App = () => {
   // Função para deletar anotações
 
   /* recebe o id e filtra somente notes que sejam diferentes ao id */
-  
+
   const deleteNote = (id) => {
     const newNotes = notes.filter((note) => note.id !== id);
     setNotes(newNotes);
@@ -59,6 +64,10 @@ const App = () => {
   return (
     <main>
       <div className="container">
+        {/* recebe um estado para armazenar texto de procura, através de props que será utilizada em seu respectivo componente */}
+        <SearchNotes  
+          handleSearchNotes={setSearchText}
+        />
         {/* recebe funções para adicionar e deletar através de props que serão utilizadas nos respectivos componentes */}
         <NotesList 
           /* procura dentro do nosso state notes, text com letra minúscula e que esteja dentro do nosso outro estado,
